@@ -1,34 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import {useParams, useNavigate} from 'react-router-dom'
+
 function CurrentPostItem(props){
     const navigate = useNavigate()
-    let id = useParams()
+    let {id} = useParams()
     let [post,setpost] = useState([])
-    let [Ge, setge] = useState(0)
-    let getpost = async (id)=>{
-        if(Ge == 0){
-            let response = await axios.get(`http://localhost:8000/post/${id}`)
-            .then(response=> {
-                if(response.data == 'redirect'){
-                    return navigate('/post/id/')
-                }else{
-                    setpost([response.data])
-                }
-            })
-            setge(Ge = Ge + 1)
-        }
-        else{
-            console.log('Посты получены')
-        }
-    }
-    getpost(id.id)
-    console.log(post)
+    useEffect(()=>{
+        axios.get(`http://localhost:8000/post/${id}`)
+        .then(response=> {
+            if(response.data == 'redirect'){
+                //Посты не найдены
+            }else{
+                setpost([response.data])
+            }
+        })
+    },[])
     return(<>
     <div>
     <div className="cards">
-        {post.map((e)=>
+        {
+        post.length == 0
+        ? <h2>Пост не найден</h2> :
+        post.map((e)=>
         <div className="card" key={e.id}>
             <div>
                 <h1 className="card_text">{e.title}</h1>

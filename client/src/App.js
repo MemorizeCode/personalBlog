@@ -13,17 +13,13 @@ import Register from './pages/Register';
 import Mainp from './pages/Mainp';
 import Login from './pages/Login'
 import Post from './pages/Post'
-import CurrentPostItem from './components/CurrentPostItem';
-import PostItem from './components/PostItem';
-
+import CurrentPostItem from './pages/CurrentPostItem';
 function App() {
-
   return (
     <div className="App">
       <Header/>
       <Routes>
         <Route path='/' element={<Mainp/>}/> 
-        {/* <Route path='/post' element={<CurrentPostItem/>}/> */}
         <Route path='/post' element={<Post/>}/> 
         <Route path='/post/id/:id' element={<CurrentPostItem/>}/> 
         <Route path='/profile' element={<Profile/>}/> 

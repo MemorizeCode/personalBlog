@@ -2,11 +2,6 @@ import React, { useEffect, useMemo, useState } from "react";
 import PostItem from "./PostItem";
 import axios from 'axios'
 
-
-
-
-
-
 function PostList(props){
     let [posts,setpost] = useState([])
     let [Ge, setge] = useState(0)
@@ -18,15 +13,9 @@ function PostList(props){
             })
             setge(Ge = Ge + 1)
         }
-        else{
-            console.log('Посты получены')
-        }
     }
     getpost()
-    
-
-    return(<>
-   
+    return(<>   
         {posts.map((e)=>
         <PostItem  key={e.id} post={e}  />
         )}
