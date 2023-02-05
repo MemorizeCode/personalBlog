@@ -1,0 +1,59 @@
+.cards{
+    display: flex;
+    justify-content: center;
+}
+.card{
+    width: 550px;
+    min-height: 50px;
+    background-color: #222222;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.card_text{
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 15px;
+    font-size: 20px;
+}
+.card_title{
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 15px;
+    font-size: 13px;
+}
+.like_com_pos{
+    display: flex;
+}
+.like{
+    background-color: green;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.blo{
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.card_date{
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 15px;
+    font-size: 13px;
+}
+.card_like{
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 15px;
+    font-size: 13px;
+}
+.card_com{
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 15px;
+    font-size: 13px;
+}
