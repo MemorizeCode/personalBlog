@@ -7,16 +7,25 @@ function CurrentPostItem(props){
     const navigate = useNavigate()
     let {id} = useParams()
     let [post,setpost] = useState([])
+    // useEffect(()=>{
+    //     axios.get(`http://localhost:8000/post/${id}`)
+    //     .then(response=> {
+    //         if(response.data == 'redirect'){
+    //             //Посты не найдены
+    //         }else{
+    //             setpost([response.data])
+    //         }
+    //     })
+    // },[])
     useEffect(()=>{
-        axios.get(`http://localhost:8000/post/${id}`)
-        .then(response=> {
-            if(response.data == 'redirect'){
-                //Посты не найдены
-            }else{
-                setpost([response.data])
-            }
-        })
-    },[])
+        axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        .then(res=>setpost(post = [res.data]))
+    })
+
+    function back(){
+        return navigate(-1)
+    }
+
     return(<>
     <div>
     <div className="cards">
@@ -26,16 +35,17 @@ function CurrentPostItem(props){
         post.map((e)=>
         <div className="card" key={e.id}>
             <div>
+                <button onClick={()=>back()}>nazad</button>
                 <h1 className="card_text">{e.title}</h1>
             </div>
             <div>
                 <p className="card_title">{e.body}</p>
             </div>
             <div className="card_date">
-                <small>Дата публикации: {e.createdAt.slice(0,10)}</small>
+                {/* <small>Дата публикации: {e.createdAt.slice(0,10)}</small> */}
                 <br></br>
             </div>
-            <div>
+            {/* <div>
                 <div className="like_com_pos">
                     <div className="card_like">
                         <p>Кол-во лайков: {e.countLike}</p>
@@ -44,7 +54,7 @@ function CurrentPostItem(props){
                         <p>Кол-во комментов: {e.comment}</p>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
         )}
         </div>

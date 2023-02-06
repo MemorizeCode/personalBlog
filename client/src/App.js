@@ -14,6 +14,7 @@ import Mainp from './pages/Mainp';
 import Login from './pages/Login'
 import Post from './pages/Post'
 import CurrentPostItem from './pages/CurrentPostItem';
+import Info from './pages/Info';
 function App() {
   return (
     <div className="App">
@@ -23,6 +24,7 @@ function App() {
         <Route path='/post' element={<Post/>}/> 
         <Route path='/post/id/:id' element={<CurrentPostItem/>}/> 
         <Route path='/profile' element={<Profile/>}/> 
+        <Route path='/info' element={<Info/>}/>
         <Route path='/register' element={<Register/>}/> 
         <Route path='/login' element={<Login/>}/>
         <Route path='*' element={<Error/>}/> 
