@@ -3,7 +3,9 @@ import React from 'react';
 
 function Profile() {
     return (<>
-    <h1>Профиль</h1>
+    <div className=''>
+        <h2>Профиль</h2>
+    </div>
     </>);
 }
 

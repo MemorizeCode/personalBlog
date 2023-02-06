@@ -14,7 +14,8 @@ function Header() {
         <Link to="/register">Регистрация</Link>
         <br></br>
         <Link to="/login">Вход</Link>
-      
+        <br />
+        <Link to="/info">Info site</Link>
     </>);
 }
 
